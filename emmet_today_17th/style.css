@@ -30,32 +30,34 @@ h3 {
   border: 6px dotted greenyellow;
   margin-bottom: 1rem;
   color: rgb(76, 74, 78);
-
-  padding: 2rem 3rem;
+  padding: clamp(1.8rem, 1rem + 2vw, 3rem);
+  /* padding: 2rem 3rem; */
+  width: 100%;
   border-radius: 10px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 240px 245px;
   gap: 1rem;
   color: rgb(76, 74, 78);
 }
 
 .ans {
-  background-color: rgb(85, 50, 104);
-  padding: 0.5rem;
+  background-color: rgb(153, 136, 161);
+  padding: clamp(0.5rem, 0.2rem + 1vw, 0.3rem);
+  width: 100%;
   text-align: center;
   border-radius: 5px;
 }
 .nt {
   margin-top: 10px;
-  display: flex;
+  display: none;
   justify-content: space-between;
 }
 
-.nt.hidden {
-  display: none;
+.nt.active {
+  display: flex;
 }
 
 .correct {
@@ -72,20 +74,11 @@ h3 {
 
 @media (max-width: 768px) {
   .parent {
-    width: 300px;
+    width: 100%;
     padding: 1rem;
   }
 
-  h3 {
-    padding: 1rem 2rem;
-  }
   .grid {
     grid-template-columns: 1fr;
-    width: 250px;
-    margin: auto;
-  }
-
-  .ans {
-    width: 250px;
   }
 }
